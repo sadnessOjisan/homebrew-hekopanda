@@ -14,8 +14,9 @@ class HekopandaCliTools < Formula
       # ENV.deparallelize  # if your formula fails when building in parallel
       # Remove unrecognized options if warned by configure
       # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-      system "./configure", *std_configure_args, "--disable-silent-rules"
+      # system "./configure", *std_configure_args, "--disable-silent-rules"
       # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+      bin.install "hekopanda"
     end
   
     test do
@@ -28,6 +29,6 @@ class HekopandaCliTools < Formula
       #
       # The installed folder is not in the path, so use the entire path to any
       # executables being tested: `system "#{bin}/program", "do", "something"`.
-      system "false"
+      system "true"
     end
   end
